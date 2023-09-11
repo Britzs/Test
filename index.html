@@ -26,11 +26,13 @@
             background-color: #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap; /* 화면이 작을 경우에도 줄 바꿈이 일어나도록 설정 */
         }
 
         h1 {
             color: #333;
-			background-color: #fff; /* 제목의 배경 색상 추가 */
+            background-color: #fff;
             padding: 10px;
         }
 
@@ -42,12 +44,21 @@
 
         .image-container {
             text-align: left;
-            margin-top: 20px;
+            margin-top: auto; /* 아래에 배치 */
+            margin-left: auto; /* 왼쪽에 배치 */
         }
 
         .image-container img {
-            max-width: 50%;
+            max-width: 100%; /* 이미지를 컨테이너에 맞게 조절 */
             height: auto;
+        }
+
+        /* 오른쪽 텍스트 창 스타일링 */
+        .text-box {
+            flex: 1; /* 화면 너비에 맞게 자동 조절 */
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
         }
 
         footer {
@@ -56,6 +67,16 @@
             text-align: center;
             padding: 10px;
         }
+
+        /* 관심사 항목들 사이에 줄 간격 추가 */
+        .text-box ul {
+            margin-top: 10px;
+        }
+
+        /* 관심사 항목들 간격을 띄움 */
+        .text-box li {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -63,12 +84,21 @@
         <h1>나의 테스트용 웹사이트</h1>
     </header>
     <div class="container">
-        <h2>Hello!</h2>
-        <p>이곳은 Tae yeon.Kim의 사이트입니다.</p>
+        <h2>Hello!<br>이곳은 Tae yeon.Kim의 사이트입니다.</h2>
         
-        <!-- 이미지를 추가합니다. -->
+        <!-- 이미지를 왼쪽 하단에 배치합니다. -->
         <div class="image-container">
             <img src="images\니모.jpg" alt="Anemonefish">
+        </div>
+
+        <!-- 오른쪽 텍스트 창에 내 관심사 추가 -->
+        <div class="text-box">
+            <h2>내 관심사</h2>
+            <ul>
+                <li>Fishing</li>
+                <li>Sports</li>
+                <li>Cooking</li>
+            </ul>
         </div>
     </div>
     <footer>
